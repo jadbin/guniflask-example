@@ -1,0 +1,7 @@
+{
+  "authentication_type": "jwt",
+  "guniflask_version": "0.6.0",
+  "jwt_secret": "Sramji8EYsUUZ43AqPMNyJHkcUBO5NyaQk5C2bgGahU",
+  "port": 8000,
+  "project_name": "guniflask_example"
+}
