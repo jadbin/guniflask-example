@@ -9,7 +9,7 @@ guniflask需要Python 3.6或更高版本的环境支持。
 
 安装项目所需依赖::
 
-    $ pip install -U guniflask[app]
+    $ pip install -r requirements/app.txt
 
 调试模式启动项目::
 

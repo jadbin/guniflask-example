@@ -6,19 +6,18 @@ http://localhost:8000/auth-example/
 """
 
 import json
-from os.path import join
+from os.path import join, dirname
 from typing import Union
 
 from flask import request, abort, jsonify, render_template
 
 from guniflask.config import settings
-from guniflask.security import roles_required
+from guniflask.security import has_any_role
 from guniflask.web import blueprint, get_route, route
 from guniflask.context import service, component
 from guniflask.security import jwt_manager
 
-from guniflask_example.config import template_folder
-
+template_folder = join(dirname(dirname(__file__)), 'templates')
 static_folder = join(template_folder, 'static')
 
 
@@ -97,7 +96,7 @@ class AuthExample:
         return render_template('auth_example/settings.html')
 
     @get_route('/settings-table')
-    @roles_required('admin')
+    @has_any_role('admin')
     def get_settings_table(self):
         """
         Get settings of app
