@@ -2,9 +2,6 @@
 
 export GUNIFLASK_PROJECT_NAME=guniflask_example
 
-# The home directory of virtual environment
-export GUNIFLASK_VIRTUAL_ENV=${GUNIFLASK_VIRTUAL_ENV}
-
 # The directory where configuration files are stored
 export GUNIFLASK_CONF_DIR=${GUNIFLASK_CONF_DIR}
 

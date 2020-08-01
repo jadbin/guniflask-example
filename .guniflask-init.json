@@ -1,8 +1,7 @@
 {
-  "application_type": "monolithic",
   "authentication_type": "jwt",
-  "cli_version": "0.2.0",
-  "jwt_secret": "m_9jbDAu8crfK5y_a-p1a86BPqRHM2tiOYr0GbB3XRQ",
+  "cli_version": "0.8.0",
+  "jwt_secret": "WsGEv1EFMJyapVQQHGjTJPHwWUcLXwcggyV-4zDFa88",
   "port": 8000,
   "project_name": "guniflask_example"
 }
