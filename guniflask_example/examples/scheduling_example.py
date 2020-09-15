@@ -8,6 +8,7 @@ import logging
 
 from guniflask.context import configuration
 from guniflask.scheduling import scheduled
+from guniflask.config import settings
 
 log = logging.getLogger(__name__)
 
@@ -24,4 +25,4 @@ class SchedulingTask:
         通过cron参数配置crontab格式的定时任务
         通过interval参数配置固定间隔的定时任务，单位为秒
         """
-        log.info('This is an example of scheduled task (%s)', self.__module__)
+        log.info(f'[{settings["project_name"]}]: This is an example of scheduled task ({self.__module__})')

@@ -10,12 +10,12 @@ from os.path import join, dirname
 from typing import Union
 
 from flask import request, abort, jsonify, render_template
-
 from guniflask.config import settings
 from guniflask.security import has_any_role
 from guniflask.web import blueprint, get_route, route
 from guniflask.context import service, component
-from guniflask.security import jwt_manager
+
+from guniflask_example.config.jwt_config import jwt_manager
 
 template_folder = join(dirname(dirname(__file__)), 'templates')
 static_folder = join(template_folder, 'static')

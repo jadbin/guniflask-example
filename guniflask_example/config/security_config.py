@@ -2,7 +2,7 @@
 
 from guniflask.context import configuration
 from guniflask.config import settings
-from guniflask.security_config import WebSecurityConfigurer, HttpSecurity, enable_web_security
+from guniflask.security_config import enable_web_security, WebSecurityConfigurer, HttpSecurity
 
 from .jwt_config import JwtConfigurer
 
@@ -12,10 +12,7 @@ from .jwt_config import JwtConfigurer
 class SecurityConfiguration(WebSecurityConfigurer):
 
     def configure_http(self, http: HttpSecurity):
-        cors = settings.get_by_prefix('guniflask.cors')
-        if cors:
-            http.cors(cors)
-
+        """Configure http security here"""
         jwt = settings.get_by_prefix('guniflask.jwt')
         if jwt:
             http.apply(JwtConfigurer(jwt))

@@ -8,6 +8,6 @@
 guniflask = dict(
     cors=True,
     jwt=dict(
-        secret='WsGEv1EFMJyapVQQHGjTJPHwWUcLXwcggyV-4zDFa88'
+        secret='BlRnufC613qGLnE4P_fnsSmWU0PR2JgYoM4LbAVFjB4'
     ),
 )
