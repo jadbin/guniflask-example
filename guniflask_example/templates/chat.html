@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="./static/bootstrap.min.css" rel="stylesheet">
+    <title>guniflask - Chatting Room</title>
+</head>
+<body style="margin:1em">
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Chatting Room</li>
+    </ol>
+</nav>
+<h2>Chat</h2>
+<form>
+    <div class="form-group">
+        <label for="textInput">Say:</label>
+        <input type="text" class="form-control" id="textInput">
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-primary" id="sendBtn">Send</button>
+    </div>
+    <ul id='messages'>
+    </ul>
+</form>
+
+</body>
+<script src="./static/jquery.min.js"></script>
+<script>
+    'use strict';
+    const ws = new WebSocket(`ws://${window.location.host}/ws/chat`);
+    ws.onmessage = function (event) {
+        const messages = $('#messages')
+        const message = document.createElement('li')
+        const content = document.createTextNode(event.data)
+        message.appendChild(content)
+        messages.append(message)
+    };
+
+    function sendMessage(event) {
+        ws.send($("#textInput").val())
+        $("#textInput").val('')
+        event.preventDefault()
+    }
+
+    $('#sendBtn').click((event) => {
+        sendMessage(event)
+    });
+</script>
+</html>
