@@ -2,10 +2,8 @@
 guniflask examples
 ==================
 
-Installation
-============
-
-guniflask需要Python 3.6或更高版本的环境支持。
+Quick Start
+===========
 
 安装项目所需依赖::
 
@@ -15,9 +13,7 @@ guniflask需要Python 3.6或更高版本的环境支持。
 
     $ bash bin/manage debug
 
-欢迎界面、触发异步调用： http://localhost:8000/hello-world 。
-
-关于依赖注入、用户认证的示例界面： http://localhost:8000/auth-example 。
+在浏览器中输入： http://localhost:8080/ 。
 
 Documentation
 =============
