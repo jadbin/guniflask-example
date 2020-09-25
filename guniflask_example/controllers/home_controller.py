@@ -5,11 +5,10 @@ from os.path import join, dirname
 from flask import render_template, send_from_directory
 from guniflask.web import blueprint, get_route
 
-template_folder = join(dirname(dirname(__file__)), 'templates')
-static_folder = join(template_folder, 'static')
+static_folder = join(dirname(dirname(__file__)), 'templates', 'static')
 
 
-@blueprint('/', template_folder=template_folder)
+@blueprint('/')
 class HomeController:
     @get_route('/')
     def home_page(self):

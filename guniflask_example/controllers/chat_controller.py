@@ -1,15 +1,11 @@
 # coding=utf-8
 
-from os.path import join, dirname
-
 from flask import render_template
 from guniflask.web import blueprint, websocket, get_route
 from starlette.websockets import WebSocket
 
-template_folder = join(dirname(dirname(__file__)), 'templates')
 
-
-@blueprint('/', template_folder=template_folder)
+@blueprint('/')
 class ChatController:
     @get_route('/chat')
     def chat_page(self):

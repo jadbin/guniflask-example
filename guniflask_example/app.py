@@ -1,6 +1,7 @@
 # coding=utf-8
 
 import logging
+from os.path import join, dirname
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -20,6 +21,8 @@ def init_app(app, settings):
     This function is invoked before running app.
     """
     _init_sqlalchemy(app, settings)
+    template_folder = join(dirname(__file__), 'templates')
+    app.template_folder = template_folder
 
 
 def _init_sqlalchemy(app, settings):

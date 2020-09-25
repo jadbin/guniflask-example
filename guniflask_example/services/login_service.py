@@ -1,14 +1,10 @@
 # coding=utf-8
 
-from os.path import join, dirname
 from typing import Union
 
 from guniflask.context import service, component
 
 from guniflask_example.config.jwt_config import jwt_manager
-
-template_folder = join(dirname(dirname(__file__)), 'templates')
-static_folder = join(template_folder, 'static')
 
 
 @component

@@ -1,7 +1,6 @@
 # coding=utf-8
 
 import json
-from os.path import join, dirname
 
 from flask import request, abort, jsonify, render_template
 from guniflask.config import settings
@@ -10,10 +9,8 @@ from guniflask.web import blueprint, get_route, route
 
 from guniflask_example.services.login_service import LoginService
 
-template_folder = join(dirname(dirname(__file__)), 'templates')
 
-
-@blueprint('/', template_folder=template_folder)
+@blueprint('/')
 class AuthController:
     def __init__(self, login_service: LoginService):
         self.login_service = login_service
