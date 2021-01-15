@@ -1,7 +1,7 @@
 {
   "authentication_type": "jwt",
-  "cli_version": "0.11.2",
-  "jwt_secret": "54KJC2-LOrDbwaxS_9xJedOmMwVUnISNlC-1M_CY0jA",
+  "cli_version": "0.11.5",
+  "jwt_secret": "wHF3rue5sqeRZ25QPx2QbeEGnkTKzGh0G_JhtNMXx40",
   "port": "8080",
   "project_name": "guniflask_example"
 }
