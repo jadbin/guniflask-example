@@ -2,6 +2,7 @@
 
 from typing import Union
 
+import bcrypt
 from guniflask.context import service, component
 
 from guniflask_example.config.jwt_config import jwt_manager
@@ -11,7 +12,7 @@ from guniflask_example.config.jwt_config import jwt_manager
 class UserStore:
     accounts = {
         'root': {
-            'password': '123456',
+            'password': bcrypt.hashpw(b'123456', bcrypt.gensalt()),
             'authorities': ['role_admin', 'role_user']
         }
     }
@@ -29,8 +30,7 @@ class LoginService:
         user_info = self.user_store.get_user(username)
         if user_info is None:
             return None
-
-        if password == user_info['password']:
+        if bcrypt.checkpw(password.encode(), user_info['password']):
             token = jwt_manager.create_access_token(
                 user_info['authorities'],
                 username=username
